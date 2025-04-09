@@ -4,6 +4,9 @@
 % Perform statistical analysis to test for regions in which PA or ED
 % significantly changes according to the soundscape.
 
+% Needed dependencies:
+% cvncode, gifti, knkutils, planeAngle.m (from https://github.com/panichem/SelectionFromWorkingMemory)
+
 clearvars; close all;
 
 baseDir = '/Users/cp3488/Documents/Projects/Helsinki/Soundscapes/Conference/github/Soundscapes';
