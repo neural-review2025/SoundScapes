@@ -2,10 +2,9 @@
 % Script to load the X matrix of beta values and perform the hyperalignment
 % across subjects.
 
-
 clearvars; close all;
 
-baseDir = '~/Soundscapes';
+baseDir = '~/Soundscapes'; % define the baseDir of the project
 path_results = fullfile(baseDir, 'results_balanced');
 addpath(genpath(fullfile(baseDir, 'code/toolbox')));
 
@@ -61,7 +60,6 @@ for hemi_i = 1:length(hemi)
             % Hyperalign the data across the subjects (assumes hyperalign accepts 1x5 cell input)
             [aligned_exp, transforms] = hyperalign_noScaling(mean_centered_data{:});  % Hyperalign across subjects  
             
-            % Transpose the aligned data for each subject (700x18 to 18x700)
             for subj_i = 1:length(subjects)
                 aligned{exp_i, subj_i} = aligned_exp{subj_i}';  % Transpose each subject's aligned data
             end 
